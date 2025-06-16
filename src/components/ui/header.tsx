@@ -13,13 +13,13 @@ const Header = async () => {
   return (
     <div className="flex shadow-sm shadow-slate-700 justify-between">
         <div className="flex">
-            <h1 className="mt-9 font-bold text-xl ml-7">
+            <h1 className="mt-9 font-bold text-xl ml-8">
                 <Link href='/'>ImageGenAI</Link>
             </h1>
         </div>
         <div className="flex p-7 mr-3">
             {!user ? ( 
-            <div>
+            <div className="mr-2">
                 <Button className="mr-3 bg-blue-950">
                     <Link href='/sign-in'>Sign In</Link></Button>
                  <Button className="bg-white text-black" variant="secondary">
