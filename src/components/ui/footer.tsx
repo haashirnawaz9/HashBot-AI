@@ -1,4 +1,4 @@
-// components/Footer.tsx
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -16,29 +16,29 @@ export default function Footer() {
 
           {/* Navigation Links */}
           <nav className="flex flex-wrap justify-center gap-4 sm:gap-6 mt-[-20px]">
-            <a 
-              href="/" 
+            <Link 
+              href="/"
               className="text-sm text-slate-300 hover:text-blue-400 transition-colors px-2 py-1 rounded hover:bg-slate-800/50"
             >
               Home
-            </a>
-            <a 
-              href="/main" 
+            </Link>
+            <Link 
+              href="/main"
               className="text-sm text-slate-300 hover:text-blue-400 transition-colors px-2 py-1 rounded hover:bg-slate-800/50"
             >
               Generate
-            </a>
-            <a 
-              href="/about" 
+            </Link>
+            <Link 
+              href="/about"
               className="text-sm text-slate-300 hover:text-blue-400 transition-colors px-2 py-1 rounded hover:bg-slate-800/50"
             >
               About
-            </a>
+            </Link>
           </nav>
 
           {/* Copyright */}
           <p className="text-s text-slate-500">
-           Copyright &copy; {new Date().getFullYear()} ImageGenAI. All rights reserved.
+            Copyright &copy; {new Date().getFullYear()} ImageGenAI. All rights reserved.
           </p>
         </div>
       </div>

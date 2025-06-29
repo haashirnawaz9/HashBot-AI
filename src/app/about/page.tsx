@@ -28,7 +28,7 @@ const DocumentationPage = () => {
               <h2 className="text-2xl font-semibold">Our Mission</h2>
             </div>
             <p className="text-blue-100 leading-relaxed">
-              We're dedicated to making AI-powered creativity accessible to everyone. Whether you're a professional designer or just exploring visual arts, our platform helps you transform ideas into stunning images effortlessly.
+              We&apos;re dedicated to making AI-powered creativity accessible to everyone. Whether you&apos;re a professional designer or just exploring visual arts, our platform helps you transform ideas into stunning images effortlessly.
             </p>
           </div>
 
@@ -78,7 +78,7 @@ const DocumentationPage = () => {
                 <span>Describe your desired image in the prompt</span>
               </li>
               <li className="flex items-start">
-                <span className="bg-cyan-500/20 text-cyan-400 rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3">4</span>
+                <span className="bg-cyan-500/20 text-cyan-400 rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3">3</span>
                 <span>Generate and download your artwork</span>
               </li>
             </ol>
@@ -95,7 +95,7 @@ const DocumentationPage = () => {
               <h2 className="text-2xl font-semibold">Designed for Simplicity</h2>
             </div>
             <p className="text-blue-100 leading-relaxed">
-              We've crafted an intuitive interface that gets out of your way so you can focus on creativity. No complex settings or technical knowledge required - just describe what you imagine and let our AI handle the rest.
+              We&apos;ve crafted an intuitive interface that gets out of your way so you can focus on creativity. No complex settings or technical knowledge required - just describe what you imagine and let our AI handle the rest.
             </p>
           </div>
         </div>
@@ -107,7 +107,7 @@ const DocumentationPage = () => {
             Start transforming your ideas into visual masterpieces today.
           </p>
           <button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/30">
-            <Link href='/main'>Get Started Now</Link>
+            <Link href="/main">Get Started Now</Link>
           </button>
         </div>
       </div>
