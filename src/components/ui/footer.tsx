@@ -1,11 +1,47 @@
-import React from 'react'
+// components/Footer.tsx
 
-const Footer = () => {
-    return (
-        <div className="flex flex-row justify-center items-center text-center h-[60px]">
-                <h1 className="font-normal text-sm">Copyright © 2025 ImageGenAI | All Rights Reserved</h1>
+export default function Footer() {
+  return (
+    <footer className="p-4">
+      <div className="max-w-4xl mx-auto px-4">
+        {/* Main Content - Centered and Balanced */}
+        <div className="flex flex-col items-center gap-6">
+          {/* Branding */}
+          <div className="text-center">
+            <h2 className="text-slate-400">ImageGenAI</h2>
+            <p className="text-sm text-slate-400 mt-2 max-w-md">
+              Transform your ideas into stunning AI-generated visuals
+            </p>
+          </div>
+
+          {/* Navigation Links */}
+          <nav className="flex flex-wrap justify-center gap-4 sm:gap-6 mt-[-20px]">
+            <a 
+              href="/" 
+              className="text-sm text-slate-300 hover:text-blue-400 transition-colors px-2 py-1 rounded hover:bg-slate-800/50"
+            >
+              Home
+            </a>
+            <a 
+              href="/main" 
+              className="text-sm text-slate-300 hover:text-blue-400 transition-colors px-2 py-1 rounded hover:bg-slate-800/50"
+            >
+              Generate
+            </a>
+            <a 
+              href="/about" 
+              className="text-sm text-slate-300 hover:text-blue-400 transition-colors px-2 py-1 rounded hover:bg-slate-800/50"
+            >
+              About
+            </a>
+          </nav>
+
+          {/* Copyright */}
+          <p className="text-s text-slate-500">
+           Copyright &copy; {new Date().getFullYear()} ImageGenAI. All rights reserved.
+          </p>
         </div>
-      )
-    }
-    
-    export default Footer;
+      </div>
+    </footer>
+  );
+}
