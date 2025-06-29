@@ -32,7 +32,7 @@ const HeaderClient = ({ user, firstName }: { user: boolean, firstName?: string }
                     </div>)}
                     
                     <button 
-                        className="ml-6 flex flex-col justify-center"
+                        className="ml-6 flex flex-col justify-center cursor-pointer"
                         onClick={() => setSidebarOpen(true)}
                     >
                         <span className="block h-0.5 w-6 bg-white mb-1.5"></span>
