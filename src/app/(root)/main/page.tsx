@@ -109,7 +109,7 @@ export default function Component() {
 
   return (
     <div className="bg-gradient-to-b from-[#0f172a] to-[#1e293b] min-h-screen py-12 px-4">
-      <h1 className="text-5xl sm:text-6xl font-bold text-center text-white mb-3 tracking-tight">AI Photo Generator</h1>
+      <h1 className="text-5xl sm:text-6xl font-bold text-center text-white mb-3 tracking-tight mt-5">AI Photo Generator</h1>
       <p className="text-center text-lg sm:text-2xl text-slate-300 mb-10">Transform your ideas into stunning visuals</p>
 
       <div className="mx-auto w-full max-w-2xl sm:max-w-3xl lg:max-w-4xl xl:max-w-4xl space-y-10">

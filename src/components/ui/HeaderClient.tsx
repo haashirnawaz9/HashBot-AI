@@ -8,7 +8,7 @@ import Sidebar from './sidebar'
 
 const HeaderClient = ({ user, firstName }: { user: boolean, firstName?: string }) => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
-    
+
     return (
         <>
             <div className="flex shadow-sm shadow-slate-700 justify-between cursor-pointer">
@@ -18,20 +18,29 @@ const HeaderClient = ({ user, firstName }: { user: boolean, firstName?: string }
                     </h1>
                 </div>
                 <div className="flex p-7 mr-3 items-center">
-                    {!user ? ( 
-                    <div>
-                        <Button className="mr-3 bg-blue-950" >
-                            <Link href='/sign-in'>Sign In</Link></Button>
-                         <Button className="bg-white text-black">
-                             <Link href='/sign-up'>Sign Up</Link></Button>
-                    </div>)
-                    :
-                    (<div className="flex max-w-40">
-                        <UserButton />
-                        <h3 className="ml-4">Welcome Back <span className="font-bold">{firstName}</span></h3>
-                    </div>)}
+                    {!user ? (
+                        <div className="flex">
+                            <Button className="mr-3 bg-blue-950">
+                                <Link href='/sign-in'>Sign In</Link>
+                            </Button>
+                            {/* Hide Sign Up on small screens (mobile) */}
+                            <div className="hidden sm:block">
+                                <Button className="bg-white text-black">
+                                    <Link href='/sign-up'>Sign Up</Link>
+                                </Button>
+                            </div>
+                        </div>
+                    ) : (
+                        <div className="flex max-w-40 items-center">
+                            <UserButton />
+                            {/* Hide welcome message on small screens (mobile) */}
+                            <h3 className="ml-4 hidden sm:block">
+                                Welcome Back <span className="font-bold">{firstName}</span>
+                            </h3>
+                        </div>
+                    )}
                     
-                    <button 
+                    <button
                         className="ml-6 flex flex-col justify-center cursor-pointer"
                         onClick={() => setSidebarOpen(true)}
                     >
@@ -42,8 +51,8 @@ const HeaderClient = ({ user, firstName }: { user: boolean, firstName?: string }
                 </div>
             </div>
 
-            {/* Added sidebar component */}
-            <Sidebar 
+            {/* Sidebar */}
+            <Sidebar
                 isOpen={sidebarOpen}
                 toggle={() => setSidebarOpen(!sidebarOpen)}
                 user={user}
