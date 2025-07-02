@@ -35,8 +35,13 @@ export async function POST(req: NextRequest) {
     const image = data.image ? `data:image/png;base64,${data.image}` : null
 
     return new Response(JSON.stringify({ image }), { status: 200 })
-  } catch (error: any) {
-    console.error('Unexpected server error:', error)
-    return new Response(JSON.stringify({ error: 'Internal server error', details: error.message }), { status: 500 })
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.error('Unexpected server error:', error.message)
+      return new Response(JSON.stringify({ error: 'Internal server error', details: error.message }), { status: 500 })
+    } else {
+      console.error('Unexpected server error:', error)
+      return new Response(JSON.stringify({ error: 'Internal server error' }), { status: 500 })
+    }
   }
-}
+}  
