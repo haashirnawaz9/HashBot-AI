@@ -10,7 +10,6 @@ import {
   Stars,
   ImageIcon,
   MessageCircle,
-  Rocket,
   Brain,
   LayoutDashboard,
 } from 'lucide-react';
