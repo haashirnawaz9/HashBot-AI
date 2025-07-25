@@ -1,3 +1,4 @@
+// Haashir Nawaz
 generator client {
   provider = "prisma-client-js"
 }

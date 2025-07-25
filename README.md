@@ -17,4 +17,8 @@
 - Seeing your last 4 images generated.
 - Footer
 - Ability to sign out of your account.
+<<<<<<< HEAD
 - AI Photo Generator Page is hidden to non-authenticated users.
+=======
+- AI Photo Generator Page is hidden to non-authenticated users.
+>>>>>>> 8927001dcb9eea969bb1d7789671b19f935bec94
