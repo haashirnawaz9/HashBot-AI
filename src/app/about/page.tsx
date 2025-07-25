@@ -5,9 +5,6 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import {
   Sparkles,
-  MessageSquareText,
-  ArrowRight,
-  ScanLine,
   Code,
   BookOpen,
 } from 'lucide-react'
