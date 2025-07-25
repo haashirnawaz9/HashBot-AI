@@ -42,11 +42,18 @@ const Sidebar = ({ isOpen, toggle, user, firstName }: SidebarProps) => {
               Home
             </Link>
             <Link 
-              href="/main" 
+              href="/image-generator" 
               className="text-white hover:text-blue-400 transition-colors py-2"
               onClick={toggle}
             >
-              Generator
+              AI Photo Generator
+            </Link>
+            <Link 
+              href="/chatbot" 
+              className="text-white hover:text-blue-400 transition-colors py-2"
+              onClick={toggle}
+            >
+              AI ChatBot
             </Link>
             <Link 
               href="/about" 

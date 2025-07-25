@@ -3,107 +3,148 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, Stars } from 'lucide-react';
+import {
+  ArrowRight,
+  Sparkles,
+  Stars,
+  ImageIcon,
+  MessageCircle,
+  Rocket,
+  Brain,
+  LayoutDashboard,
+} from 'lucide-react';
 
 export default function HomePage() {
   return (
-    <div className="bg-gradient-to-b from-[#0f172a] via-[#162033] to-[#1e293b] text-white min-h-screen flex items-start justify-center p-4 md:p-8 relative overflow-hidden">
-      {/* Background Animation */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxjaXJjbGUgc3Ryb2tlPSIjMjU2M2ViIiBzdHJva2Utb3BhY2l0eT0iLjA1IiBjeD0iMTAwIiBjeT0iMTAwIiByPSI5OSIvPjwvZz48L3N2Zz4=')] opacity-40" />
-      
-      <motion.section 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="max-w-7xl mx-auto relative mt-8 md:mt-16"
-      >
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="text-left space-y-8">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3 }}
-              className="inline-flex items-center px-4 py-2 bg-blue-900/30 rounded-full text-blue-300 text-sm backdrop-blur-sm border border-blue-500/10"
-            >
-              <Sparkles className="w-4 h-4 mr-2" />
-              <span className="mr-2">AI-Powered Creativity</span>
-              <Stars className="w-3 h-3 text-blue-400 animate-pulse" />
-            </motion.div>
-            
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="text-5xl md:text-6xl font-extrabold"
-            >
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-violet-400 to-blue-400 animate-gradient">
-                Transform Your Ideas
-              </span>
-              <br />
-              <span className="relative">
-                Into Reality
-                <motion.span
-                  className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-violet-500 rounded-full"
-                  initial={{ width: 0 }}
-                  animate={{ width: '100%' }}
-                  transition={{ delay: 1, duration: 0.8 }}
-                />
-              </span>
-            </motion.h1>
+    <div className="relative min-h-screen bg-gradient-to-b from-[#0f172a] via-[#162033] to-[#1e293b] text-white overflow-hidden px-6 sm:px-12 md:px-20 lg:px-32 py-16">
+      {/* Decorative Circles */}
+      <div className="pointer-events-none fixed inset-0 opacity-10 saturate-150 mix-blend-screen">
+        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 800 800">
+          <circle cx="400" cy="400" r="350" stroke="#3b82f6" strokeOpacity="0.05" strokeWidth="4" />
+          <circle cx="400" cy="400" r="300" stroke="#8b5cf6" strokeOpacity="0.03" strokeWidth="3" />
+          <circle cx="400" cy="400" r="250" stroke="#2563eb" strokeOpacity="0.02" strokeWidth="2" />
+        </svg>
+      </div>
 
-            <motion.p 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.7 }}
-              className="text-lg md:text-xl text-slate-300 max-w-xl leading-relaxed"
-            >
-              Experience the future of creativity with our advanced AI image generation. 
-              Create stunning, unique visuals that perfectly capture your vision, all with 
-              a few simple prompts.
-            </motion.p>
-
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.9 }}
-              className="flex items-center gap-4"
-            >
-              <Link 
-                href="/main"
-                className="group inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-500 via-violet-500 to-blue-500 bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-lg text-lg font-medium transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25"
-              >
-                Start Creating
-                <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-              <div className="w-3 h-3 rounded-full bg-green-400 animate-pulse" />
-              <span className="text-sm text-slate-400">AI Model Ready</span>
-            </motion.div>
+      {/* Hero Section */}
+      <section className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="space-y-6"
+        >
+          <div className="inline-flex items-center px-6 py-2 bg-gradient-to-r from-blue-900/40 to-violet-900/40 border border-blue-500/40 text-blue-300 rounded-full shadow-md">
+            <Sparkles className="w-5 h-5 mr-3" />
+            Explore the Power of AI
+            <Stars className="w-4 h-4 ml-3 text-blue-400 animate-pulse" />
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            className="relative group"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-violet-500 to-blue-500 rounded-2xl blur-3xl opacity-20 -z-10 animate-pulse group-hover:opacity-30 transition-opacity" />
-            <Image
-              src="/ai.jpg"
-              alt="AI Generated Masterpiece"
-              width={900}
-              height={600}
-              className="rounded-2xl shadow-2xl shadow-blue-500/10 border border-white/10 transition-all duration-500 group-hover:scale-[1.02] group-hover:shadow-blue-500/20"
-              priority
-            />
-            <div className="absolute -bottom-4 left-4 right-4 bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/10 transform transition-transform duration-500 group-hover:translate-y-1">
-              <div className="flex items-center gap-4">
-                <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                <p className="text-sm text-slate-300">AI Model Processing • Creating Magic</p>
-              </div>
-            </div>
-          </motion.div>
+          <h1 className="text-5xl font-extrabold tracking-tight leading-tight">
+            Welcome to{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-violet-400 to-blue-400">
+              HashBotAI
+            </span>
+          </h1>
+
+          <p className="text-lg text-slate-300 max-w-xl">
+            Discover the ultimate AI companion for generating images, chatting, learning, and boosting your productivity across every creative domain.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-6 mt-6">
+            <Link
+              href="/image-generator"
+              className="group flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full shadow-lg hover:scale-105 transition-transform"
+              aria-label="Launch AI Image Generator"
+            >
+              <ImageIcon className="w-5 h-5" />
+              Generate Images
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform motion-safe:animate-pulse" />
+            </Link>
+
+            <Link
+              href="/chatbot"
+              className="group flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-violet-600 to-violet-800 rounded-full shadow-lg hover:scale-105 transition-transform"
+              aria-label="Chat with AI Assistant"
+            >
+              <MessageCircle className="w-5 h-5" />
+              HashBot Chat
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform motion-safe:animate-pulse" />
+            </Link>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1, y: [0, -5, 0] }}
+          transition={{ duration: 4, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
+          className="relative rounded-3xl overflow-hidden border border-blue-500/30 shadow-2xl"
+        >
+          <Image
+            src="/ai.jpg"
+            alt="AI Visual"
+            width={700}
+            height={467}
+            className="object-cover rounded-3xl"
+            priority
+          />
+          <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-lg rounded-xl p-4 border border-white/20 text-slate-300 text-center font-semibold">
+            AI Model Processing & Creating Magic ✨
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Feature Section */}
+      <section className="mt-28 max-w-6xl mx-auto">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="text-center text-3xl font-bold text-white mb-12"
+        >
+          What You Can Do with HashBotAI
+        </motion.h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+            {
+              title: 'AI Chat Assistants',
+              description: 'Chat with intelligent agents that can brainstorm, explain, or assist.',
+              icon: <Brain className="w-8 h-8 text-blue-400" />,
+            },
+            {
+              title: 'Image Generation',
+              description: 'Turn prompts into stunning AI-generated art instantly.',
+              icon: <ImageIcon className="w-8 h-8 text-violet-400" />,
+            },
+            {
+              title: 'Smart Dashboard',
+              description: 'Track usage, manage tools, and personalize your AI workspace.',
+              icon: <LayoutDashboard className="w-8 h-8 text-teal-400" />,
+            },
+          ].map(({ title, description, icon }, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 + idx * 0.2 }}
+              className="bg-white/5 p-6 rounded-2xl border border-white/10 shadow-xl hover:shadow-blue-600/20 transition-all"
+            >
+              <div className="mb-4">{icon}</div>
+              <h3 className="text-xl font-semibold mb-2">{title}</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">{description}</p>
+            </motion.div>
+          ))}
         </div>
-      </motion.section>
+      </section>
+
+      {/* Footer */}
+      <footer className="mt-10text-center text-sm text-slate-500 py-6">
+        <div className="flex justify-center items-center gap-2">
+          <div className="w-2.5 h-2.5 bg-green-400 rounded-full animate-ping" />
+          <span className="tracking-wide font-medium">AI Systems Online and Ready</span>
+        </div>
+      </footer>
     </div>
   );
 }

@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="flex flex-col items-center gap-6">
           {/* Branding */}
           <div className="text-center">
-            <h2 className="text-slate-400">ImageGenAI</h2>
+            <h2 className="text-slate-400">HashBot AI</h2>
             <p className="text-sm text-slate-400 mt-2 max-w-md">
               Transform your ideas into stunning AI-generated visuals
             </p>
@@ -23,10 +23,16 @@ export default function Footer() {
               Home
             </Link>
             <Link 
-              href="/main"
+              href="/image-generator"
               className="text-sm text-slate-300 hover:text-blue-400 transition-colors px-2 py-1 rounded hover:bg-slate-800/50"
             >
               Generate
+            </Link>
+            <Link 
+              href="/chatbot"
+              className="text-sm text-slate-300 hover:text-blue-400 transition-colors px-2 py-1 rounded hover:bg-slate-800/50"
+            >
+              Chat
             </Link>
             <Link 
               href="/about"
@@ -38,7 +44,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <p className="text-s text-slate-500">
-            Copyright &copy; {new Date().getFullYear()} ImageGenAI. All rights reserved.
+            Copyright &copy; {new Date().getFullYear()} HashBot AI. All rights reserved.
           </p>
         </div>
       </div>
