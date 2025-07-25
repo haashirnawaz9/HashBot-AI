@@ -1,6 +1,8 @@
 "use client";
+
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { useUser } from '@clerk/nextjs';
 import { useState, useRef, useEffect, KeyboardEvent } from 'react';
 
 interface Message {
@@ -9,7 +11,12 @@ interface Message {
 }
 
 function Chatbot() {
+  const { user, isLoaded } = useUser();
+  const userId = user?.id;
+
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const hasLoadedInitialMessages = useRef(false);
+
   const [messages, setMessages] = useState<Message[]>([
     { role: 'assistant', content: 'Hi! I am HashBot, how can I help you today?' },
   ]);
@@ -17,15 +24,43 @@ function Chatbot() {
   const [isLoading, setIsLoading] = useState(false);
   const prevMessagesLength = useRef(messages.length);
 
+  // Load messages from localStorage only once
+  useEffect(() => {
+    if (!isLoaded || !userId || hasLoadedInitialMessages.current) return;
+
+    const saved = localStorage.getItem(`chat-${userId}`);
+    if (saved) {
+      setMessages(JSON.parse(saved));
+    }
+
+    hasLoadedInitialMessages.current = true;
+  }, [isLoaded, userId]);
+
+  // Save messages to localStorage
+  useEffect(() => {
+    if (!isLoaded || !userId) return;
+    localStorage.setItem(`chat-${userId}`, JSON.stringify(messages));
+  }, [messages, isLoaded, userId]);
+
+  const clearChat = () => {
+    if (userId) {
+      localStorage.removeItem(`chat-${userId}`);
+    }
+    setMessages([{ role: 'assistant', content: 'Hi! I am HashBot, how can I help you today?' }]);
+  };  
+
   const sendMessage = async () => {
     if (!message.trim() || isLoading) return;
     setIsLoading(true);
-    setMessage('');
-    setMessages(prev => [
-      ...prev,
+
+    const updatedMessages: Message[] = [
+      ...messages,
       { role: 'user', content: message },
       { role: 'assistant', content: '' }
-    ]);
+    ];
+
+    setMessages(updatedMessages);
+    setMessage('');
 
     try {
       const response = await fetch('/api/chat', {
@@ -43,6 +78,7 @@ function Chatbot() {
         const { done, value } = await reader?.read() || { done: true, value: new Uint8Array() };
         if (done) break;
         const text = decoder.decode(value, { stream: true });
+
         setMessages(prev => {
           const last = prev[prev.length - 1];
           return [...prev.slice(0, -1), { ...last, content: last.content + text }];
@@ -55,11 +91,15 @@ function Chatbot() {
         { role: 'assistant', content: "I'm sorry, but I encountered an error. Please try again later." }
       ]);
     }
+
     setIsLoading(false);
   };
 
   const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter' && !e.shiftKey) sendMessage();
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage();
+    }
   };
 
   useEffect(() => {
@@ -105,9 +145,17 @@ function Chatbot() {
             type="button"
             onClick={sendMessage}
             disabled={isLoading}
+            variant='outline'
             className="rounded-lg px-4 py-2"
           >
             {isLoading ? '...' : 'Send'}
+          </Button>
+          <Button
+            type="button"
+            onClick={clearChat}
+            className="rounded-lg px-4 py-2"
+            >
+            Clear
           </Button>
         </div>
       </div>

@@ -1,8 +1,9 @@
+// NO "use client" here!
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/ui/header";
 import { ClerkProvider } from "@clerk/nextjs";
-import Footer from "@/components/ui/footer";
+import LayoutWrapper from "@/components/ui/layout-wrapper";
 
 export const metadata: Metadata = {
   title: "HashBot AI",
@@ -15,14 +16,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider dynamic>
-    <html lang="en" suppressHydrationWarning>
-      <body>
-        <Header />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning>
+        <body>
+          <Header />
+          <LayoutWrapper>{children}</LayoutWrapper>
+        </body>
+      </html>
     </ClerkProvider>
   );
 }
