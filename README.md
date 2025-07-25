@@ -23,3 +23,4 @@
 - AI Photo Generator Page is hidden to non-authenticated users.
 >>>>>>> 8927001dcb9eea969bb1d7789671b19f935bec94
 # HashBot-AI
+# HashBot-AI
