@@ -10,9 +10,6 @@ export default function Footer() {
           {/* Branding */}
           <div className="text-center">
             <h2 className="text-slate-400">HashBot AI</h2>
-            <p className="text-sm text-slate-400 mt-2 max-w-md">
-              Transform your ideas into stunning AI-generated visuals
-            </p>
           </div>
 
           {/* Navigation Links */}
