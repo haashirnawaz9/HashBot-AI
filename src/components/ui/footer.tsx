@@ -41,7 +41,7 @@ export default function Footer() {
           </nav>
 
           {/* Copyright */}
-          <p className="text-s text-slate-500">
+          <p className="text-s text-slate-500 mt-[-15px]">
             Copyright &copy; {new Date().getFullYear()} HashBot AI. All rights reserved.
           </p>
         </div>
