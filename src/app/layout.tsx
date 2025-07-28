@@ -1,4 +1,3 @@
-// NO "use client" here!
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/ui/header";
@@ -6,7 +5,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import LayoutWrapper from "@/components/ui/layout-wrapper";
 
 export const metadata: Metadata = {
-  title: "HashBot AI",
+  title: "HashBot AI", 
   description: "HashBot AI - Use AI technology to generate images or chat to AI for help.",
 };
 

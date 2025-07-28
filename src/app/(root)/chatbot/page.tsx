@@ -10,6 +10,7 @@ interface Message {
   content: string;
 }
 
+
 function Chatbot() {
   const { user, isLoaded } = useUser();
   const userId = user?.id;
