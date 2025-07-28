@@ -12,9 +12,9 @@ const HeaderClient = ({ user, firstName }: { user: boolean, firstName?: string }
 
     return (
         <>
-            <div className="flex shadow-sm shadow-slate-700 justify-between cursor-pointer">
+            <div className="flex shadow-sm shadow-slate-900 justify-between top-0">
                 <div className="flex">
-                    <h1 className="mt-9 font-bold text-xl ml-9">
+                    <h1 className="mt-9 font-bold text-xl ml-9 cursor-pointer">
                         <Link href='/'>HashBot AI</Link>
                     </h1>
                 </div>

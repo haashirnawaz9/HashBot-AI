@@ -147,14 +147,14 @@ function Chatbot() {
             onClick={sendMessage}
             disabled={isLoading}
             variant='outline'
-            className="rounded-lg px-4 py-2"
+            className="rounded-lg px-4 py-2 cursor-pointer"
           >
             {isLoading ? '...' : 'Send'}
           </Button>
           <Button
             type="button"
             onClick={clearChat}
-            className="rounded-lg px-4 py-2"
+            className="rounded-lg px-4 py-2 cursor-pointer"
             >
             Clear
           </Button>

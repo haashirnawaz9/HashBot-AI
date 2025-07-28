@@ -129,7 +129,7 @@ export default function Component() {
                 <Button
                   onClick={handleSubmit}
                   type="button"
-                  className="flex-1 bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-4 px-4 text-sm sm:text-lg rounded-xl transition-all duration-300 ease-in-out flex items-center justify-center"
+                  className="flex-1 bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-4 px-4 text-sm sm:text-lg rounded-xl transition-all duration-300 ease-in-out flex items-center justify-center cursor-pointer"
                   disabled={isLoading || !prompt.trim()}
                 >
                   {isLoading ? (
@@ -145,7 +145,7 @@ export default function Component() {
                 <Button
                   onClick={handleRandomPrompt}
                   type="button"
-                  className="flex-1 bg-purple-600 hover:bg-purple-700 text-white font-medium py-4 px-4 text-sm sm:text-lg rounded-xl transition-all duration-300 ease-in-out flex items-center justify-center"
+                  className="flex-1 bg-purple-600 hover:bg-purple-700 text-white font-medium py-4 px-4 text-sm sm:text-lg rounded-xl transition-all duration-300 ease-in-out flex items-center justify-center cursor-pointer"
                   disabled={isLoading}
                 >
                   {isLoading ? (
