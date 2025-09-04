@@ -8,7 +8,6 @@ export async function POST(req: NextRequest) {
       return new Response(JSON.stringify({ error: 'Prompt is required and must be a string.' }), { status: 400 })
     }
 
-    // Build the multipart/form-data body
     const formData = new FormData()
     formData.append('prompt', prompt)
     formData.append('model', 'sd3.5-large-turbo')  
