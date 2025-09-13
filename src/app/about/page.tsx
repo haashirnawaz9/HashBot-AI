@@ -21,6 +21,7 @@ const fadeIn = {
   },
 }
 
+
 const DocumentationPage = () => {
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-[#0f172a] via-[#162033] to-[#1e293b] text-white overflow-hidden">
