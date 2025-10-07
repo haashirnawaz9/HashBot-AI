@@ -8,6 +8,7 @@ export async function POST(req: NextRequest) {
     apiKey: process.env.GROQ_API_KEY!,
   });
 
+  
   const data = await req.json();
 
   const completion = await groq.chat.completions.create({
